@@ -26,7 +26,7 @@ public class User {
     @PostMapping("/sign-up")
     public String createUser(@RequestBody @Valid UserDTO req){
         userRepository.save(new UserModel(req));
-        return "Usuario criado com sucesso";
+        return "OK";
     }
 
     @GetMapping
