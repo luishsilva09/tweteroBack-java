@@ -24,10 +24,10 @@ public class TweetModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 20, nullable = true)
+    @Column(length = 50, nullable = true)
     private String username;
 
-    @Column(length = 200, nullable = true)
+    @Column(length = 400, nullable = true)
     private String avatar;
 
     @Column(length = 256, nullable = false)

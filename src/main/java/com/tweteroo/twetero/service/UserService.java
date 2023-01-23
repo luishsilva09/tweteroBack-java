@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -41,9 +40,7 @@ public class UserService {
         throw new ResponseStatusException(HttpStatus.CONFLICT); 
         
     }
-
-
-    private boolean existUsername(String username){
+    public boolean existUsername(String username){
         return findByUsername(username).isEmpty(); 
     }
 }
