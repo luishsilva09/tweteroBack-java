@@ -40,7 +40,7 @@ public class Tweet {
     
     @GetMapping("/tweets")
     public Page<TweetModel> list (@RequestParam("page")int page){
-        Pageable paging = PageRequest.of(page, 5,Sort.by("id").descending());
+        Pageable paging = PageRequest.of(page, 5, Sort.by("id").descending());
         return (tweetService.listTweets(paging));
         
     }
