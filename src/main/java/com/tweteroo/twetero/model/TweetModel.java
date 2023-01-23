@@ -15,19 +15,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TweetModel {
     
-    public TweetModel(TweetDTO data){
-        this.avatar = data.avatar();
+    public TweetModel(TweetDTO data, String avatar,String username){
+        this.avatar = avatar;
         this.text = data.text();
-        this.username = data.username();
+        this.username = username;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 20, nullable = false)
+    @Column(length = 20, nullable = true)
     private String username;
 
-    @Column(length = 200, nullable = false)
+    @Column(length = 200, nullable = true)
     private String avatar;
 
     @Column(length = 256, nullable = false)

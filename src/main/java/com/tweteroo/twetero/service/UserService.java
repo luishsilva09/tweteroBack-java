@@ -30,9 +30,18 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    private List<UserModel> findByUsername(String username){
+    public List<UserModel> findByUsername(String username){
         return userRepository.findByUsername(username);
     }
+
+    public String findAvatar(String username){
+        if(!existUsername(username)){
+            return userRepository.findByUsername(username).get(0).getAvatar();      
+          } 
+        throw new ResponseStatusException(HttpStatus.CONFLICT); 
+        
+    }
+
 
     private boolean existUsername(String username){
         return findByUsername(username).isEmpty(); 
